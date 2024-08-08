@@ -11,11 +11,11 @@ module.exports = {
       black: "#000000",
 
       blue: {
-        300:"#4256D0",
+        300: "#4256D0",
         400: "#5C73DB",
         500: "#4763E4",
-        700:"#5145CD",
-        800:"#0E1B6B"
+        700: "#5145CD",
+        800: "#0E1B6B",
       },
 
       green: {
@@ -30,7 +30,7 @@ module.exports = {
       },
 
       gray: {
-        100:"#F4F4F5",
+        100: "#F4F4F5",
         200: "#E4E4E7",
         400: "#A1A1AA",
         500: "#71717A",
@@ -38,7 +38,13 @@ module.exports = {
       },
     },
 
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "navbar-image": "url('/assets/images/bg-navbar.svg')",
+        "custom-gradient":
+          "linear-gradient(180deg, #131C55 0%, rgba(19, 28, 85, 0.35) 104.8%, rgba(19, 28, 85, 0) 169.64%)",
+      },
+    },
   },
 
   plugins: [],

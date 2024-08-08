@@ -1,7 +1,11 @@
+import Sidebar from "./ui/components/sidebar/sidebar.component";
+
 export default function Home() {
   return (
     <>
-      <h2>Home Page</h2>
+      <Sidebar />
     </>
   );
 }
+
+

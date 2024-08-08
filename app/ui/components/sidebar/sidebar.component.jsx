@@ -11,7 +11,7 @@ export default function Sidebar() {
           <h1>DEXCHANGE</h1>
         </div>
 
-TODO: revoir le border-b de la sidebar pour que ca ne prend pas tout le contenue, et le gradient
+        {/* TODO: revoir le border-b de la sidebar pour que ca ne prend pas tout le contenue, et le gradient */}
         <div className="flex flex-col  px-5  w-full h-full mt-5 space-y-3  border-b-2 border-blue-700">
           <Link href="/update-user">
             <LinksComponent

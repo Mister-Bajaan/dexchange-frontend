@@ -2,7 +2,7 @@ import EtatBtn from "../../../components/button/active-inactif/etat.btn";
 import GetBtn from "../../../components/button/btn-action/get.btn";
 import RemoveBtn from "../../../components/button/btn-action/remove.btn";
 
-import { fetchData } from "../../../../../api/fetchApi/data.fetch";
+import { fetchData } from "../../../../../api/fetchApi/Getdata.fetch";
 
 export default async function UserListContent() {
   const userData = await fetchData();
@@ -43,7 +43,7 @@ export default async function UserListContent() {
               </td>
               <td className="px-6 py-4 text-sm text-black">{user.prenom}</td>
               <td className="px-6 py-4 text-sm text-black">{user.email}</td>
-              <td className="px-6 py-4 text-sm text-black">{user.Role}</td>
+              <td className="px-6 py-4 text-sm text-black">{user.role}</td>
               <td className="px-6 py-4 text-sm text-black">
                 <EtatBtn isActive={user.status === "actif"} />
               </td>

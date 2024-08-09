@@ -16,17 +16,21 @@ export default function FormPageContent({ titlePage, SecondTitle, btnContent }) 
               label="Adresse e-mail"
               placeholder="alexander.foley@mail.com"
               type="email"
+              name="email"
+              id="email"
             />
 
             <InputForm
               label="Numéro de téléphone"
               placeholder="(+237) 696 88 77 55"
               type="tel"
+              name="phone"
+              id="phone"
             />
 
-            <InputForm label="Nom" placeholder="Alexander" type="text" />
+            <InputForm label="Nom" placeholder="Alexander" type="text" name="name" id="name" />
 
-            <InputForm label="Prénom" placeholder="Foley" type="text" />
+            <InputForm label="Prénom" placeholder="Foley" type="text" name="prenom" id="prenom" />
 
             <div className="flex flex-col gap-2">
               <label className="text-base font-normal">Role</label>
@@ -43,6 +47,8 @@ export default function FormPageContent({ titlePage, SecondTitle, btnContent }) 
               label="Adresse"
               placeholder="Mariste, Dakar, Sénégal "
               type="text"
+              name="adresse"
+              id="adresse"
             />
           </div>
           <ButtonCTA>{btnContent}</ButtonCTA>

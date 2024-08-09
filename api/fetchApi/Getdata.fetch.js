@@ -1,5 +1,5 @@
 // import API_URL from "../utils.api";
-const API_URL = "http://localhost:5050/user/getUser/";
+const API_URL = "http://localhost:5050/user/getUser";
 
 export const fetchData = async () => {
   try {

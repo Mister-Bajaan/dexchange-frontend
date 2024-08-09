@@ -2,7 +2,7 @@ import ButtonCTA from "../../components/button/btn-CTA/button";
 import InputForm from "../../components/input/input";
 import Topbar from "../../components/topbar/topbar.component";
 
-export default function FormPageContent({ titlePage, userName, btnContent }) {
+export default function FormPageContent({ titlePage, SecondTitle, btnContent }) {
   return (
     <>
       <Topbar />
@@ -10,7 +10,7 @@ export default function FormPageContent({ titlePage, userName, btnContent }) {
       <div className="flex flex-col px-6 pt-2 font-semibold space-y-4">
         <h2 className="text-[32px]">{titlePage}</h2>
         <div className="bg-white rounded-[10px] p-6 font-normal">
-          <h3 className="mb-10">{userName}</h3>
+          <h3 className="mb-10">{SecondTitle}</h3>
           <div className="grid grid-cols-2 gap-3">
             <InputForm
               label="Adresse e-mail"

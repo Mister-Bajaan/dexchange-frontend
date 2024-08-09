@@ -1,13 +1,14 @@
+import Container from "../../components/container/container";
 import FormPageContent from "../layout/form-page.content";
 
 export default function ContentAdd() {
   return (
-    <div className="w-full bg-gray-100 space-y-4">
+    <Container>
       <FormPageContent
         titlePage="Configuration"
-        userName="ADAMA DIOM"
+        SecondTitle="Ajouter un compte"
         btnContent="Sauvegarder"
       />
-    </div>
+    </Container>
   );
 }

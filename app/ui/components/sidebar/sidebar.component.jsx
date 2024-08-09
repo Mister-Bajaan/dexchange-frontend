@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ActiveBtn from "./button/active-btn";
+import ActiveBtn from "./active-link/active-btn";
 import LinksComponent from "./links/links.component";
 import Link from "next/link";
 
@@ -15,27 +15,23 @@ export default function Sidebar() {
 
         {/* TODO: revoir le border-b de la sidebar pour que ca ne prend pas tout le contenue, et le gradient */}
         <div className="flex flex-col  px-5  w-full h-full mt-5 space-y-3  border-b-2 border-blue-700">
-          <Link href="/update-user">
-            <LinksComponent
-              srcImage1={"/assets/icons/setting.svg"}
-              srcImage2={"/assets/icons/down-arrow.svg"}
-              text="Configuration"
-              textColor="text-white"
-            />
-          </Link>
+          <LinksComponent
+            srcImage1={"/assets/icons/setting.svg"}
+            srcImage2={"/assets/icons/down-arrow.svg"}
+            text="Configuration"
+            textColor="text-white"
+            href={"/update-user"}
+          />
 
-          <Link href="/dashboard">
-            <ActiveBtn />
-          </Link>
+          <ActiveBtn />
 
-          <Link href="/add-user">
-            <LinksComponent
-              srcImage1={"/assets/icons/folder.svg"}
-              srcImage2={"/assets/icons/up-arrow.svg"}
-              text="Nouveau"
-              textColor="text-white opacity-50"
-            />
-          </Link>
+          <LinksComponent
+            srcImage1={"/assets/icons/folder.svg"}
+            srcImage2={"/assets/icons/up-arrow.svg"}
+            text="Nouveau"
+            textColor="text-white opacity-50"
+            href={"/add-user"}
+          />
         </div>
 
         <div className="px-5 py-4 flex items-center mb-5 gap-3   ">

@@ -73,7 +73,8 @@ export default function FormPageContent({
                 <option value="">Sélectionner un rôle</option>
                 <option value="agence">Agence</option>
                 <option value="agent">Client</option>
-                {/* Ajoutez d'autres options si nécessaire */}
+                <option value="admin">Admin</option>
+                <option value="mandataire">Mandataire</option>
               </select>
             </div>
 

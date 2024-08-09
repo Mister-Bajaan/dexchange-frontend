@@ -13,8 +13,7 @@ export default function Sidebar() {
           </h1>
         </div>
 
-        {/* TODO: revoir le border-b de la sidebar pour que ca ne prend pas tout le contenue, et le gradient */}
-        <div className="flex flex-col  px-5  w-full h-full mt-5 space-y-3  border-b-2 border-blue-700">
+        <div className="flex flex-col  px-5  w-full h-full mt-5 space-y-3  ">
           <LinksComponent
             srcImage1={"/assets/icons/setting.svg"}
             srcImage2={"/assets/icons/down-arrow.svg"}

@@ -1,7 +1,11 @@
+import ContentUpdate from "../../ui/modules/content-update/content.update";
+import Sidebar from "../../ui/components/sidebar/sidebar.component";
+
 export default function UpdateUser() {
   return (
-    <>
-      <h1>Update User Page</h1>
-    </>
+    <div className="flex">
+      <Sidebar/>
+      <ContentUpdate/>
+    </div>
   );
 }

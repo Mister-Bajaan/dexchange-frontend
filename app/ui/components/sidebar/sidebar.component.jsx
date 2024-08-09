@@ -8,7 +8,9 @@ export default function Sidebar() {
     <>
       <div className="w-[256px] h-screen bg-navbar-image flex flex-col">
         <div className="flex flex-col items-center justify-center h-16 p-[10px] bg-blue-800 font-bold text-xl text-white">
-          <h1>DEXCHANGE</h1>
+          <h1>
+            <Link href="/dashboard">DEXCHANGE</Link>
+          </h1>
         </div>
 
         {/* TODO: revoir le border-b de la sidebar pour que ca ne prend pas tout le contenue, et le gradient */}
@@ -22,7 +24,7 @@ export default function Sidebar() {
             />
           </Link>
 
-          <Link href="/">
+          <Link href="/dashboard">
             <ActiveBtn />
           </Link>
 

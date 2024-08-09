@@ -1,7 +1,11 @@
+import ContentAdd from "../../ui/modules/content-add/content.add";
+import Sidebar from "../../ui/components/sidebar/sidebar.component";
+
 export default function AddUser() {
   return (
-    <>
-      <h1>Add User Page</h1>
-    </>
+    <div className="flex">
+      <Sidebar />
+      <ContentAdd />
+    </div>
   );
 }

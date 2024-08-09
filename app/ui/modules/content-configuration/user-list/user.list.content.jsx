@@ -28,6 +28,7 @@ export default function UserListContent() {
             </th>
           </tr>
         </thead>
+        
         <tbody className="divide-y divide-gray-200">
           <tr>
             <td className="px-6 py-4 text-sm font-medium text-black">

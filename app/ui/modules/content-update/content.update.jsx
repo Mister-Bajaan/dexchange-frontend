@@ -1,15 +1,13 @@
 import FormPageContent from "../layout/form-page.content";
 
-import Container from "../../components/container/container";
-
 export default function ContentUpdate() {
   return (
-    <Container>
+    <div className="w-full bg-gray-100 space-y-4">
       <FormPageContent
         titlePage="Voir l'utilisateur"
         SecondTitle="ADAMA DIOM"
         btnContent="Modifier"
       />
-    </Container>
+    </div>
   );
 }

@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Topbar from "../../components/topbar/topbar.component";
 import BtnAddUser from "../../components/button/btn-add-user/btn-add-user";
+import Container from "../../components/container/container";
+
+import UserListContent from "./user-list/user.list.content";
 
 export default function ContentConfiguration() {
   return (
@@ -25,6 +28,10 @@ export default function ContentConfiguration() {
 
         <BtnAddUser />
       </div>
+
+      <Container>
+        <UserListContent/>
+      </Container>
     </div>
   );
 }

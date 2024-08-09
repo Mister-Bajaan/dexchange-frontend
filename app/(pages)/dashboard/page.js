@@ -6,6 +6,7 @@ export default function Dashboard() {
     <div className="flex">
       <Sidebar />
       <ContentConfiguration />
+
     </div>
   );
 }

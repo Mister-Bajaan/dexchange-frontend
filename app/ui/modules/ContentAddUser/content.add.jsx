@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { redirect } from 'next/navigation'
 
 import FormPageContent from "@components/FormComponents/form/FormComponent";
 import Topbar from "@components/LayoutsComponents/NavigationComponents/topbar/topbar.component";
@@ -9,12 +9,11 @@ import { PostUserData } from "@api/fetchApi/PostData.fetch";
 
 export default function ContentAdd() {
   const handleSubmit = async (formData) => {
-    console.log("Form Data:", formData);
     try {
       const result = await PostUserData(formData);
       if (result) {
         alert("Add successfully");
-        console.log(result);
+        redirect('/dashboard')
       }
     } catch (error) {
       console.error("Erreur lors de l'envoi des données:", error);

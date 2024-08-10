@@ -5,8 +5,6 @@ import { useState } from "react";
 import ButtonUpdateAddComponent from "@components/ButtonComponents/BtnUpdateAdd/button";
 import InputForm from "@components/FormComponents/input/input";
 
-import { PostUserData } from "@api/fetchApi/PostData.fetch";
-
 // Composants du formulaire
 
 export default function FormComponent({
@@ -102,7 +100,7 @@ export default function FormComponent({
                   Sélectionner un rôle
                 </option>
                 <option value="Admin">Admin</option>
-                <option value="Agent">Agent</option>
+                <option value="Agence">Agence</option>
                 <option value="Client">Client</option>
                 <option value="Mandataire">Mandataire</option>
               </select>

@@ -2,7 +2,12 @@ import EtatBtn from "@components/ButtonComponents/BtnActifInactif/etat.btn";
 import GetBtn from "@components/ButtonComponents/BtnActionForm/get.btn";
 import RemoveBtn from "@components/ButtonComponents/BtnActionForm/remove.btn";
 
+import { fetchData } from "@api/fetchApi/Getdata.fetch";
+
 export default async function UserListContent() {
+  const Getdata = await fetchData();
+
+
   return (
     <div className="">
       <table className="min-w-full">
@@ -30,7 +35,26 @@ export default async function UserListContent() {
         </thead>
 
         <tbody className="divide-y divide-gray-200">
-          <tr>
+          {Getdata.map((user) => (
+            <tr key={user._id}>
+              <td className="px-6 py-4 text-sm font-medium text-black">
+                {user.nom}
+              </td>
+              <td className="px-6 py-4 text-sm text-black">{user.prenom}</td>
+              <td className="px-6 py-4 text-sm text-black">
+                {user.email}
+              </td>
+              <td className="px-6 py-4 text-sm text-black">{user.role}</td>
+              <td className="px-6 py-4 text-sm text-black">
+                <EtatBtn isActive={user.status === "actif"} />
+              </td>
+              <td className="px-6 py-4 text-sm text-black flex gap-1">
+                <GetBtn />
+                <RemoveBtn />
+              </td>
+            </tr>
+          ))}
+          {/* <tr>
             <td className="px-6 py-4 text-sm font-medium text-black">
               Alexander
             </td>
@@ -46,25 +70,9 @@ export default async function UserListContent() {
               <GetBtn />
               <RemoveBtn />
             </td>
-          </tr>
+          </tr> */}
 
-          <tr>
-            <td className="px-6 py-4 text-sm font-medium text-black">
-              Alexander
-            </td>
-            <td className="px-6 py-4 text-sm text-black">Foley</td>
-            <td className="px-6 py-4 text-sm text-black">
-              alexander.foley@mail.com
-            </td>
-            <td className="px-6 py-4 text-sm text-black">Admin</td>
-            <td className="px-6 py-4 text-sm text-black">
-              <EtatBtn isActive={false} />
-            </td>
-            <td className="px-6 py-4 text-sm text-black flex gap-1">
-              <GetBtn />
-              <RemoveBtn />
-            </td>
-          </tr>
+
         </tbody>
       </table>
     </div>

@@ -13,6 +13,7 @@ const nextConfig = {
       ...config.resolve.alias,
       "@components": path.resolve(__dirname, "app/ui/components/"),
       "@modules": path.resolve(__dirname, "app/ui/modules/"),
+      "@api": path.resolve(__dirname, "api/"),
     };
 
     return config;

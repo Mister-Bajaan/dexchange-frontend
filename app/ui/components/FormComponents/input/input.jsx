@@ -10,7 +10,7 @@ export default function InputForm({ type, placeholder, label, name, id}) {
           placeholder={placeholder}
           name={name}
           id={id}
-          className="w-full p-4 text-sm text-gray-700 rounded-xl border border-gray-200 focus:outline-blue-500"
+          className="w-full p-4 text-sm  rounded-xl border border-gray-200 focus:outline-blue-500 placeholder-gray-800"
         />
       </div>
     </>

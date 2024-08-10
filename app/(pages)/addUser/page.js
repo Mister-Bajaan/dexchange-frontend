@@ -1,11 +1,11 @@
 import Sidebar from "@components/LayoutsComponents/NavigationComponents/SidebarComponents/sidebar.component";
-import ContentConfiguration from "@modules/ContentConfiguration/configuration.content";
+import ContentAdd from "@modules/ContentAddUser/content.add";
 
-export default function Dashboard() {
+export default function AddUser() {
   return (
     <div className="flex">
       <Sidebar />
-      <ContentConfiguration />
+      <ContentAdd />
     </div>
   );
 }

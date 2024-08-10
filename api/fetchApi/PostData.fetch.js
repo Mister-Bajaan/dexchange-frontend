@@ -1,53 +1,26 @@
-// import ButtonCTA from "../../app/ui/components/button/btn-CTA/button";
-import { useState } from "react";
-import FormPageContent from "../../app/ui/components/form-page-content";
+import API_URL from "@api/utils/utils.api";
 
-const API_URL = "http://localhost:5050/user/postUser";
-
-export default function PostAgent() {
-  const [formData, setFormData] = useState({
-    nom: "",
-    prenom: "",
-    email: "",
-    phone: "",
-    adresse: "",
-    role: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
+// Fonction pour envoyer les données du formulaire
+export async function PostUserData(formData) {
+  try {
+    const response = await fetch(`${API_URL}postUser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
-  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-      console.log("Réponse du serveur:", result);
-    } catch (error) {
-      console.error("Erreur lors de la requête:", error);
+    if (!response.ok) {
+      const errorText = await response.text(); // Pour obtenir le message d'erreur détaillé
+      throw new Error(
+        `Erreur lors de l'envoi des données: ${response.statusText}`
+      );
     }
-  };
 
-  return (
-    <FormPageContent
-      titlePage="Configuration"
-      secondTitle="Adama Diom"
-      btnContent="Soumettre"
-      formData={formData}
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
-    />
-  );
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Erreur lors de l'envoi des données:", error);
+  }
 }

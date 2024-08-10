@@ -2,6 +2,8 @@ import Sidebar from "@components/LayoutsComponents/NavigationComponents/SidebarC
 import ContentAdd from "@modules/ContentAddUser/content.add";
 
 export default function AddUser() {
+
+  
   return (
     <div className="flex">
       <Sidebar />

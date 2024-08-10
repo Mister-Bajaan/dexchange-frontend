@@ -8,7 +8,7 @@ import LinksComponent from "./links/links.component";
 export default function Sidebar() {
   return (
     <>
-      <div className="w-[256px] h-screen bg-navbar-image flex flex-col">
+      <div className="w-[256px] h-100% bg-navbar-image flex flex-col">
         <div className="flex flex-col items-center justify-center h-16 p-[10px] bg-blue-800 font-bold text-xl text-white">
           <h1>
             <Link href="/dashboard">DEXCHANGE</Link>

@@ -4,6 +4,8 @@ import RemoveBtn from "@components/ButtonComponents/BtnActionForm/remove.btn";
 
 import { fetchData } from "@api/fetchApi/Getdata.fetch";
 
+// Affichage des données de l'utilisateur dans le Dashboard
+
 export default async function UserListContent() {
   const Getdata = await fetchData();
 

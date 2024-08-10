@@ -11,23 +11,28 @@ import { DeleteUserData } from "@api/fetchApi/DeleteData.fetch";
 
 // Affichage des données de l'utilisateur dans le Dashboard
 
-export default async function UserListContent() {
+export default function UserListContent() {
   // const Getdata = await fetchData();
 
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
     const data = await fetchData();
+    // console.log(data);
     setUsers(data);
   };
 
   const handleDelete = async (id) => {
-    try {
-      await DeleteUserData(id);
-
-      fetchUsers();
-    } catch (error) {
-      console.error("Failed to delete user:", error);
+    if (
+      window.confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")
+    ) {
+      try {
+        await DeleteUserData(id);
+        // Recharger les utilisateurs après suppression
+        fetchUsers();
+      } catch (error) {
+        console.error("Erreur lors de la suppression :", error.message);
+      }
     }
   };
 
@@ -62,7 +67,7 @@ export default async function UserListContent() {
         </thead>
 
         <tbody className="divide-y divide-gray-200">
-          {data.map((user) => (
+          {users.map((user) => (
             <tr key={user._id}>
               <td className="px-6 py-4 text-sm font-medium text-black">
                 {user.nom}
@@ -75,7 +80,7 @@ export default async function UserListContent() {
               </td>
               <td className="px-6 py-4 text-sm text-black flex gap-1">
                 <GetBtn />
-                <RemoveBtn />
+                <RemoveBtn onClick={() => handleDelete(user._id)} />
               </td>
             </tr>
           ))}

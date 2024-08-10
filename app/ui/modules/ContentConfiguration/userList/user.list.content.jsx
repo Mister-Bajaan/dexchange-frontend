@@ -1,14 +1,39 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import EtatBtn from "@components/ButtonComponents/BtnActifInactif/etat.btn";
 import GetBtn from "@components/ButtonComponents/BtnActionForm/get.btn";
 import RemoveBtn from "@components/ButtonComponents/BtnActionForm/remove.btn";
 
-import { fetchData } from "@api/fetchApi/Getdata.fetch";
+import { fetchData } from "@api/fetchApi/GetData.fetch";
+import { DeleteUserData } from "@api/fetchApi/DeleteData.fetch";
 
 // Affichage des données de l'utilisateur dans le Dashboard
 
 export default async function UserListContent() {
-  const Getdata = await fetchData();
+  // const Getdata = await fetchData();
 
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = async () => {
+    const data = await fetchData();
+    setUsers(data);
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await DeleteUserData(id);
+
+      fetchUsers();
+    } catch (error) {
+      console.error("Failed to delete user:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   return (
     <div className="">
@@ -37,15 +62,13 @@ export default async function UserListContent() {
         </thead>
 
         <tbody className="divide-y divide-gray-200">
-          {Getdata.map((user) => (
+          {data.map((user) => (
             <tr key={user._id}>
               <td className="px-6 py-4 text-sm font-medium text-black">
                 {user.nom}
               </td>
               <td className="px-6 py-4 text-sm text-black">{user.prenom}</td>
-              <td className="px-6 py-4 text-sm text-black">
-                {user.email}
-              </td>
+              <td className="px-6 py-4 text-sm text-black">{user.email}</td>
               <td className="px-6 py-4 text-sm text-black">{user.role}</td>
               <td className="px-6 py-4 text-sm text-black">
                 <EtatBtn isActive={user.status === "actif"} />
@@ -73,8 +96,6 @@ export default async function UserListContent() {
               <RemoveBtn />
             </td>
           </tr> */}
-
-
         </tbody>
       </table>
     </div>

@@ -23,12 +23,10 @@ export default function UserListContent() {
   };
 
   const handleDelete = async (id) => {
-    if (
-      window.confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")
-    ) {
+    console.log('Delete button clicked for id:', id); // Ajoutez cette ligne
+    if (window.confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
       try {
         await DeleteUserData(id);
-        // Recharger les utilisateurs après suppression
         fetchUsers();
       } catch (error) {
         console.error("Erreur lors de la suppression :", error.message);
